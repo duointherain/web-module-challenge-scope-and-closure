@@ -89,12 +89,19 @@ finalScore(inning, 9) might return:
 */ 
 
 function finalScore(inning, ins){
-  return inning(3,0)
-  /*Code Here*/
+    let home = 0;
+    let away = 0;
+  for  (let i=0; i<ins; i++) {
+    home = home + inning(3,0);
+    away = away + inning(3,0);
+  }
+   return (`Home Team: ${home}  Away team:  ${away} `) 
+  }
 
-}
 
-console.log(finalScore(inning, 9))
+
+
+console.log(finalScore(inning, 1))
 
 
 
