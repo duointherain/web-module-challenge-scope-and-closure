@@ -62,15 +62,17 @@ console.log("*** Task 2 ***")
 
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(max, min){
 
-    /*Code Here*/
+  return Math.floor(Math.random() * max - min);
 
 }
 
-
-
-
+console.log(inning(3, 0))
+console.log(inning(3, 0))
+console.log(inning(3, 0))
+console.log(inning(3, 0))
+console.log(inning(3, 0))
 console.log("*** Task 3 ***")
 /* Task 3: finalScore()
 
@@ -86,11 +88,16 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
+function finalScore(inning, ins){
+  return inning(3,0)
   /*Code Here*/
 
 }
+
+console.log(finalScore(inning, 9))
+
+
+
 console.log("*** Task 4 ***")
 /* Task 4: 
 
