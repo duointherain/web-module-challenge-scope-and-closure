@@ -62,17 +62,19 @@ console.log("*** Task 2 ***")
 
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(max, min){
+function inning(){
 
-  return Math.floor(Math.random() * max - min);
+  return Math.floor(Math.random() * 3 - 0);
 
 }
 
-console.log(inning(3, 0))
-console.log(inning(3, 0))
-console.log(inning(3, 0))
-console.log(inning(3, 0))
-console.log(inning(3, 0))
+console.log(inning())
+console.log(inning())
+console.log(inning())
+console.log(inning())
+console.log(inning())
+
+
 console.log("*** Task 3 ***")
 /* Task 3: finalScore()
 
@@ -92,18 +94,18 @@ function finalScore(inning, ins){
     let home = 0;
     let away = 0;
   for  (let i=0; i<ins; i++) {
-    home = home + inning(3,0);
-    away = away + inning(3,0);
+    home = home + inning();
+    away = away + inning();
   }
-   return (`Home Team: ${home}  Away team:  ${away} `) 
-  }
+  return {
+    hometeam:home, 
+    awayteam:away
+        }
+      }
 
+  console.log(finalScore(inning, 9))
 
-
-
-console.log(finalScore(inning, 1))
-
-
+      
 
 console.log("*** Task 4 ***")
 /* Task 4: 
@@ -127,8 +129,90 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+// function getInningScore(inning){
+//   let score = 0;
+//   score = inning();
+//   return score;
+
+// }
+
+// function getInningScore(inning, ins){
+//   let home = 0;
+//   let away = 0;
+//   let inner = 4; 
+// for  (let i=0; i<ins; i++) {
+//   home = home + inning();
+//   away = away + inning();
+  
+//   //console.log(`${inner}th inning: Away Team ${away} - ${home}`);
+  
+
+// }
+// return (`${inner}th inning: Away Team: ${away}  Home team:  ${home} `) 
+// }
+
+
+
+
+// console.log(getInningScore(inning, 9))
+
+
+// function finalScore(inning, ins)
+//console.log(`Final Score: ${awayF} - ${homef}`){
+//   let home = 0;
+//   let away = 0;
+// for  (let i=0; i<ins; i++) {
+//   home = home + inning(3,0);
+//   away = away + inning(3,0);
+// }
+// return (`Home Team: ${home}  Away team:  ${away} `) 
+// }
+
+
+
+
+
+console.log("*** Scoreboard***")
+
+function getInningScore(home, away, index){
+  if(index === 1){
+    return `${index}st inning: Away Team: ${away} - Home Team: ${home}`;
+  } else if(index === 2){
+    return `${index}nd inning: Away Team: ${away} - Home Team: ${home}`;
+  } else if(index === 3){
+    return `${index}rd inning: Away Team: ${away} - Home Team: ${home}`;
+  } else {
+    return `${index}th inning: Away Team: ${away} - Home Team: ${home}`;
+  } 
 }
+
+function scoreBoard(cb1, cb2, numsOfInnings){
+  let home = 0;
+  let away = 0;
+  let index = 0;
+  for(let i = 1; i <= numsOfInnings; i++ ){
+    index++
+    home += cb2()
+    away += cb2()
+    console.log(cb1(home, away, index));
+  }
+    console.log(`Final Score: Away Team: ${away} - Home Team: ${home}`);
+};
+scoreBoard(getInningScore,inning,9);
+
+
+
+
+
+
+
+
+
+
+
+//console.log(finalScore(inning (),getInningScore(inning, 3) 3))
+
+
+
 
 
