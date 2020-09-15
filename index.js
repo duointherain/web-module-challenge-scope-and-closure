@@ -190,10 +190,13 @@ function scoreBoard(cb1, cb2, numsOfInnings){
   let home = 0;
   let away = 0;
   let index = 0;
+  let homeF = 0;
+  let awayF = 0;
   for(let i = 1; i <= numsOfInnings; i++ ){
     index++
     home += cb2()
     away += cb2()
+    homeF 
     console.log(cb1(home, away, index));
   }
     console.log(`Final Score: Away Team: ${away} - Home Team: ${home}`);
